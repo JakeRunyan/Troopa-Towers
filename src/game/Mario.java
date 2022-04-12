@@ -39,7 +39,6 @@ public class Mario implements Animatable
 	}
 	
 	/**
-	 * 
 	 * Puts mario on the screen every time the frame is updated. 
 	 * 
 	 * @param g A graphics object to draw the Mario on the screen. 
