@@ -32,7 +32,6 @@ public class Background implements Animatable
 	 */
 	public void draw(Graphics g, GameView view)
 	{
-		// TODO Auto-generated method stub
 		g.drawImage(control.loadImage("resources/path.jpg"), 0, 0, null);
 	}
 

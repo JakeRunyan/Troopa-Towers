@@ -67,7 +67,8 @@ public class Path
 	 */
 	public void drawPath(Graphics drawer)
 	{
-		for (int pos = 0; pos < size - 1; pos++) {
+		for (int pos = 0; pos < size - 1; pos++)
+		{
 			drawer.setColor(Color.BLUE);
 			drawer.drawLine(arrayX[pos], arrayY[pos], arrayX[pos + 1], arrayY[pos + 1]);
 		}
