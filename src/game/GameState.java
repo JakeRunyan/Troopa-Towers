@@ -6,13 +6,12 @@ package game;
 import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class GameState 
 {
 	// Fields
-	
+	private GameControl control;
 	private Path path;
 	private List<Animatable> objects;
 	private Animatable background;
@@ -25,7 +24,12 @@ public class GameState
 	 */
 	public GameState (GameControl control)
 	{
+		this.control = control;
+		
+		objects = new ArrayList<Animatable>();
+		
 		background = new Background();
+		objects.add(background);
 		menu = new Menu();
 		mario = new Mario(this);
 		
