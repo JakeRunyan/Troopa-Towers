@@ -49,7 +49,6 @@ public class GameControl implements Runnable, ActionListener
 		// Nothing else for the main thread to do -- simply return.
 	}
 	
-
 	/**
 	 * This is the first function invoked (called) by the GUI thread.
 	 * Set up the game.

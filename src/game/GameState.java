@@ -6,16 +6,14 @@ package game;
 import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 
 public class GameState 
 {
 	// Fields
-	
 	private Path path;
-	private Animatable background;
-	private Animatable menu;
-	private Animatable mario;
+	private List<Animatable> objects;
 	
 	/** Construct all the data needed track the state of the game. 
 	 * 
@@ -23,9 +21,9 @@ public class GameState
 	 */
 	public GameState (GameControl control)
 	{
-		background = new Background(control);
-		menu = new Menu();
-		mario = new Mario(this);
+		objects.add(new Background(control));
+		objects.add(new Menu());
+		objects.add(new Mario(this));
 		
 		// Build our path
 		try
@@ -56,14 +54,18 @@ public class GameState
 	public void drawAll(Graphics g, GameView view)
 	{
 		// Draw the background and the menu
-		background.draw(g, view);
-		menu.draw(g, view);
-		
+//		background.draw(g, view);
+//		menu.draw(g, view);
+//		for (Animatable item : objects)
+//		{
+////			item.draw(g, view);
+//			System.out.println(item);
+//		}
 		// Draw the path
 		path.drawPath(g);
 		
 		// Draw the Mario
-		mario.draw(g, view);
+//		mario.draw(g, view);
 	}	
 	
 	/**	 
@@ -74,6 +76,6 @@ public class GameState
 	 */
 	public void updateAll(double elapsedTime)
 	{
-		mario.update(elapsedTime);
+//		mario.update(elapsedTime);
 	}
 }
