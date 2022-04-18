@@ -47,6 +47,6 @@ public class Mario implements Animatable
 	public void draw(Graphics g, GameView view)
 	{
 		Point point = new Point(state.getPath().locatePosition(location));
-		view.drawCenteredImage(g, "resources/mario.png", (int)point.getX(), (int)point.getY());
+		view.drawCenteredImage(g, "resources/mario.png", (int)point.getX(), (int)point.getY(), 35);
 	}
 }

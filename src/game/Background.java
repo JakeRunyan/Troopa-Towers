@@ -7,15 +7,13 @@ import java.awt.Graphics;
 
 public class Background implements Animatable
 {
-	private GameControl control;
-	
 	/** Constructs the background. 
 	 * 
 	 * @param control - Passes in the gameControl object. 
 	 */
-	public Background(GameControl control)
+	public Background()
 	{
-		this.control = control;
+		
 	}
 	
 	/**
@@ -23,7 +21,6 @@ public class Background implements Animatable
 	 */
 	public void update(double elapsedTime)
 	{
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -32,7 +29,7 @@ public class Background implements Animatable
 	 */
 	public void draw(Graphics g, GameView view)
 	{
-		g.drawImage(control.loadImage("resources/path.jpg"), 0, 0, null);
+		view.drawCenteredImage(g, "resources/path.jpg", 300, 300, 600);
 	}
 
 }
