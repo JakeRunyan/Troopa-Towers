@@ -9,9 +9,9 @@ public class Luigi extends Enemy
 	private GameState state;
 	
 	/**
-	 * Constructor for the Peach object. 
+	 * Constructor for the Luigi object. 
 	 * 
-	 * @param state Passes in the GameState object so to draw the Peach with the correct information. 
+	 * @param state Passes in the GameState object so to draw the Luigi with the correct information. 
 	 */
 	public Luigi(GameState state)
 	{
@@ -27,7 +27,6 @@ public class Luigi extends Enemy
 		}
 	}
 
-	@Override
 	public void draw(Graphics g, GameView view)
 	{
 		Point point = new Point(state.getPath().locatePosition(location));
