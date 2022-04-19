@@ -16,7 +16,17 @@ public class KoopaTroopaMenu extends Tower
 
 	public void update(double elapsedTime)
 	{
-		
+		if(state.getMouseClicked())
+		{
+			int deltaX = Math.abs(x - state.getMouseX());
+			int deltaY = Math.abs(y -state.getMouseY());
+			
+			if(deltaX < 40 && deltaY < 40)
+			{
+				state.consumeClick();
+				state.addAnimatable(new KoopaTroopaMoving(state, x, y));
+			}
+		}
 	}
 
 	public void draw(Graphics g, GameView view)
