@@ -8,9 +8,9 @@ public class KoopaTroopaMoving extends Tower
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public KoopaTroopaMoving()
+	public KoopaTroopaMoving(GameState state, int x, int y)
 	{
-		
+		super(state, x, y);
 	}
 
 	public void update(double elapsedTime)

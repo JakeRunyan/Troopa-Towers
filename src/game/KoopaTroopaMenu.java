@@ -9,9 +9,9 @@ public class KoopaTroopaMenu extends Tower
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public KoopaTroopaMenu()
+	public KoopaTroopaMenu(GameState state, int x, int y)
 	{
-		
+		super(state, x, y);
 	}
 
 	public void update(double elapsedTime)
