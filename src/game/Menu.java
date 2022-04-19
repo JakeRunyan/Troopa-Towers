@@ -1,6 +1,6 @@
 /** This class holds the data to create a functional menu. 
  * @author Jake Runyan, Nathan Atwood
- * @version April 12th, 2022 */
+ * @version April 19th, 2022 */
 
  package game;
 

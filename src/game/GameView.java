@@ -1,6 +1,6 @@
 /** This class handles creating the window and generating the graphics within.
  * @author Jake Runyan, Nathan Atwood
- * @version April 12th, 2022 */
+ * @version April 19th, 2022 */
 package game;
 
 import java.awt.Dimension;

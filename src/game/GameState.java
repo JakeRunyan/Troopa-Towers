@@ -1,6 +1,6 @@
 /**This class keeps track of all the numbers and information behind the game's mechanics.
  * @author Jake Runyan, Nathan Atwood
- * @version April 12th, 2022 */
+ * @version April 19th, 2022 */
 package game;
 
 import java.awt.Graphics;
