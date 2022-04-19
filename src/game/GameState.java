@@ -29,7 +29,9 @@ public class GameState
 		// Construct list of things to animate. 
 		objects = new ArrayList<Animatable>();
 		
-		objects.add(new Mario(this)); // pass in things from game state becasue mario is one of the moving items on the screen. 
+		objects.add(new Background());
+		objects.add(new Menu());
+		objects.add(new Mario(this));
 		
 		// Build our path
 		try
@@ -59,36 +61,36 @@ public class GameState
 	 */
 	public void drawAll(Graphics g, GameView view)
 	{
-		for( Animatable singleObject : objects) {
+		for( Animatable singleObject : objects)
+		{
 			singleObject.draw(g, view);
 		}
 	}	
 	
-	/**	 
-	 * Right now, this methos only updates mario, but it will also update all
-	 *  of the other enemies and other towers that we introduce nto the game. 
+	/**	Right now, this method updates all the items.
 	 * 
-	 * @param elapsedTime - The amouht of time that has passed since the beginning of the game. 
+	 * @param elapsedTime - The amount of time that has passed since the beginning of the game. 
 	 */
 	public void updateAll(double elapsedTime)
 	{
-		mario.update(elapsedTime);
+		for(Animatable item : objects)
+		{
+			item.update(elapsedTime);
+		}
 	}
 
-	/**
-	 * 
-	 * Mutator method to add things to the list of animateable objects. 
+	/** Mutator method to add things to the list of animatable objects. 
 	 * 
 	 * @param thingToAdd - Whatever the user wants to add to the list of objects to animate. 
 	 */
-	public void addAnimatable(Animatable thingToAdd) {
-
+	public void addAnimatable(Animatable thingToAdd)
+	{
 		objects.add(thingToAdd);
 		System.out.println("The add animatable helper method was called.");
 	}
 
 	// NOTE FROM NATHAN - WE MAY WANT TO ADD A MUTATOR MATHOD TO 
-	//					  REMOVE THINGS FROMTHE LIST AS WELL. I 
+	//					  REMOVE THINGS FROM THE LIST AS WELL. I 
 	//					  HAVENT ADDED IT YET BECASUE I WANTED TO
 	//		 			  SEE IF WE ACTUALLY NEEDED IT BEFORE I 
 	//					  WRITE IT. 

@@ -56,7 +56,6 @@ public class Path
 			segLengthArray[pos] = Math.sqrt(Math.abs(result2 + result1));
 			totalLength += segLengthArray[pos];
 		}
-
 	}
 
 	/**

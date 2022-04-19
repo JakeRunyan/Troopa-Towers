@@ -16,8 +16,6 @@ public class GameView extends JPanel
 	private GameState state;
 	private GameControl control;
 	
-	// Constructor 
-	
 	/** Constructor for the GameView object. 
 	 * 
 	 * @param s - passes in data for the game state. 
