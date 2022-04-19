@@ -28,7 +28,7 @@ public class GameState
 		
 		objects.add(new Background());
 		objects.add(new Menu());
-		objects.add(new KoopaTroopa());
+		objects.add(new KoopaTroopaMenu());
 		objects.add(new Mario(this));
 		
 		// Build our path

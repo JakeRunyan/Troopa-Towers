@@ -2,14 +2,14 @@ package game;
 
 import java.awt.Graphics;
 
-public class KoopaTroopa extends Tower
+public class KoopaTroopaMenu extends Tower
 {
 	/**
 	 * Constructor for the KoopaTroopa object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public KoopaTroopa()
+	public KoopaTroopaMenu()
 	{
 		
 	}
