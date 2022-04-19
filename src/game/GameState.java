@@ -14,9 +14,9 @@ public class GameState
 	private GameControl control;
 	private Path path;
 	private List<Animatable> objects;
-	private Animatable background;
-	private Animatable menu;
-	private Animatable mario;
+	private Animatable background;  //
+	private Animatable menu;  //
+	private Animatable mario;  //
 	
 	/** Construct all the data needed track the state of the game. 
 	 * 
@@ -28,10 +28,9 @@ public class GameState
 		
 		objects = new ArrayList<Animatable>();
 		
-		background = new Background();
-		objects.add(background);
-		menu = new Menu();
-		mario = new Mario(this);
+		objects.add(new Background());
+		objects.add(new Menu());
+		objects.add(new Mario(this)); // pass in things from game state becasue mario is one of the moving items on the screen. 
 		
 		// Build our path
 		try
@@ -61,15 +60,9 @@ public class GameState
 	 */
 	public void drawAll(Graphics g, GameView view)
 	{
-		// Draw the background and the menu
-		background.draw(g, view);
-		menu.draw(g, view);
-		
-		// Draw the path
-		path.drawPath(g);
-		
-		// Draw the Mario
-		mario.draw(g, view);
+		for( Animatable singleObject : objects) {
+			singleObject.draw(g, view);
+		}
 	}	
 	
 	/**	 
