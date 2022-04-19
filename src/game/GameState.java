@@ -124,8 +124,12 @@ public class GameState implements MouseMotionListener, MouseListener
 	 */
 	public void updateAll(double elapsedTime)
 	{
+		// Updating all current objects.
 		for(Animatable item : objects)
 			item.update(elapsedTime);
+		
+		// Adding all objects that are to be added.
+		objects.addAll(objectsToAdd);
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
@@ -137,8 +141,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	 */
 	public void addAnimatable(Animatable thingToAdd)
 	{
-		objects.add(thingToAdd);
-		System.out.println("The add animatable helper method was called.");
+		objectsToAdd.add(thingToAdd);
 	}
 
 	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 
