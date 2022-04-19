@@ -23,11 +23,4 @@ public class KoopaTroopaMenu extends Tower
 	{
 		view.drawCenteredImage(g, "resources/koopa_troopa.png", 635, 100, 55);
 	}
-
-	@Override
-	public boolean isInside(int targetX, int targetY)
-	{
-		return false;
-	}
-	
 }

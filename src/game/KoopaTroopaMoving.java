@@ -4,8 +4,7 @@ import java.awt.Graphics;
 
 public class KoopaTroopaMoving extends Tower
 {
-	/**
-	 * Constructor for the KoopaTroopa object. 
+	/** Constructor for the KoopaTroopa object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
@@ -24,18 +23,4 @@ public class KoopaTroopaMoving extends Tower
 	{
 		
 	}
-
-	public boolean isInside(int targetX, int targetY)
-	{
-		int cx = 635;
-		int cy = 100;
-		int width = 55;
-		
-		if(cx - targetX <= width/2 )
-		{
-			
-		}
-		return false;
-	}
-	
 }

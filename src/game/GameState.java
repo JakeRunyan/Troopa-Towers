@@ -20,7 +20,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	private int credit;
 	private boolean gameOver;
 	private List<Animatable> objects;
-	private int MouseX, MouseY;
+	private int mouseX, mouseY;
 	private boolean mouseClicked;
 	
 	/** Construct all the data needed track the state of the game. 
@@ -52,6 +52,40 @@ public class GameState implements MouseMotionListener, MouseListener
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	/** An accessor method to get the mouse x coordinate. 
+	 * 
+	 * @return mouseX
+	 */
+	public int getMouseX()
+	{
+		return mouseX;
+	}
+	
+	/** An accessor method to get the mouse Y coordinate. 
+	 * 
+	 * @return mouseY
+	 */
+	public int getMouseY()
+	{
+		return mouseY;
+	}
+	
+	/** An accessor method to get if the mouse is clicked.
+	 * 
+	 * @return if the mouse is clicked or not.
+	 */
+	public boolean getMouseClicked()
+	{
+		return mouseClicked;
+	}
+	
+	/** An accessor method to consume the click.
+	 */
+	public void consumeClick()
+	{
+		mouseClicked = false;
 	}
 
 
@@ -85,6 +119,9 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		for(Animatable item : objects)
 			item.update(elapsedTime);
+		
+		// If there hasn't been a mouse click that hasn't been consumed, consume it.
+		mouseClicked = false;
 	}
 
 	/** Mutator method to add things to the list of animatable objects. 
@@ -125,44 +162,23 @@ public class GameState implements MouseMotionListener, MouseListener
 
 	public void mouseMoved(MouseEvent e)
 	{
-		System.out.println(e.getX() + " " + e.getY());
+		mouseX = e.getX();
+		mouseY = e.getY();
 		
 	}
 
 	public void mouseClicked(MouseEvent e)
 	{
-		for (Animatable a : objects)
-		{
-			if (a instanceof Tower)
-			{
-				
-			}
-		}
+		mouseClicked = true;
 	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void mousePressed(MouseEvent e) {}
 
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void mouseReleased(MouseEvent e) {}
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void mouseEntered(MouseEvent e) {}
 
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void mouseExited(MouseEvent e) {}
 
 	// NOTE FROM NATHAN - WE MAY WANT TO ADD A MUTATOR MATHOD TO 
 	//					  REMOVE THINGS FROM THE LIST AS WELL. I 
