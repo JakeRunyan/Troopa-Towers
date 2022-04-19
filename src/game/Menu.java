@@ -34,6 +34,10 @@ public class Menu implements Animatable
 	{
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(600, 0, 800, 600);
+
+		g.setColor(Color.WHITE);
+		g.drawString("Lives", 690, 75);
+		g.drawString("Insert Lives Here", 690, 100);
 		
 		g.setColor(Color.WHITE);
 		g.drawString("Menu", 690, 50);
