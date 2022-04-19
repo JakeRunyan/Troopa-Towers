@@ -12,14 +12,16 @@ public class Menu implements Animatable
 
 	private Integer lives;
 	private Integer credit;
+	private GameState state;
 
 	/**
 	 * Nothing to construct or store in the object. Just need to draw the menu on the screen.
 	 */
-	public Menu(int lives, int credit)
+	public Menu(GameState state)
 	{
-		this.lives = lives;
-		this.credit = credit;
+		this.state = state;
+		this.lives = state.getLife();
+		this.credit = state.getCredit();
 	}
 	
 	/**
@@ -27,7 +29,9 @@ public class Menu implements Animatable
 	 */
 	public void update(double elapsedTime)
 	{
-		// TODO Auto-generated method stub
+		lives = state.getLife();
+		credit = state.getCredit();
+		
 	}
 
 	/** This function is to draw the menu background and the menu word.
@@ -54,7 +58,5 @@ public class Menu implements Animatable
 		g.setColor(Color.WHITE);
 		g.drawString("Credit", 690, 150);
 		g.drawString(Integer.toString(credit), 690, 175);
-		
-	
 	}
 }

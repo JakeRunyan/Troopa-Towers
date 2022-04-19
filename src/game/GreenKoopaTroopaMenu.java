@@ -2,14 +2,14 @@ package game;
 
 import java.awt.Graphics;
 
-public class KoopaTroopaMenu extends Tower
+public class GreenKoopaTroopaMenu extends Tower
 {
 	/**
 	 * Constructor for the KoopaTroopa object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public KoopaTroopaMenu(GameState state, int x, int y)
+	public GreenKoopaTroopaMenu(GameState state, int x, int y)
 	{
 		super(state, x, y);
 	}
@@ -24,13 +24,13 @@ public class KoopaTroopaMenu extends Tower
 			if(deltaX < 40 && deltaY < 40)
 			{
 				state.consumeClick();
-				state.addAnimatable(new KoopaTroopaMoving(state, x, y));
+				state.addAnimatable(new GreenKoopaTroopaMoving(state, x, y));
 			}
 		}
 	}
 
 	public void draw(Graphics g, GameView view)
 	{
-		view.drawCenteredImage(g, "resources/koopa_troopa.png", x, y, 55);
+		view.drawCenteredImage(g, "resources/green_koopa_troopa.png", x, y, 55);
 	}
 }

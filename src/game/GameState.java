@@ -39,7 +39,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Set Initial Life, Timer, and Credit
 		this.timer = 0;
 		this.life = 100;
-		this.credit = 1000;
+		this.credit = 600;
 
 		// Construct list of things to animate. 
 		objects = new ArrayList<Animatable>();
@@ -47,9 +47,16 @@ public class GameState implements MouseMotionListener, MouseListener
 		objectsToRemove = new ArrayList<Animatable>();
 		
 		objects.add(new Background());
+<<<<<<< HEAD
 		objects.add(new Menu(life, credit));
 		objects.add(new KoopaTroopaMenu(this, 635, 100));
 
+=======
+		objects.add(new Menu(this));
+		objects.add(new GreenKoopaTroopaMenu(this, 635, 100));
+		objects.add(new RedKoopaTroopaMenu(this, 635, 200));
+		objects.add(new Mario(this));
+>>>>>>> 0480b0ea8abc224ed1f2ce60567d5028e8fa8dd4
 		
 		// Build our path
 		try
@@ -95,14 +102,20 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Updating all current objects.
 		for(Animatable item : objects)
 			item.update(elapsedTime);
+<<<<<<< HEAD
 
 		// Add Mario objects as needed
 		if (timer % 100 == 0)
 		addAnimatable(new Mario(this));
+=======
+>>>>>>> 0480b0ea8abc224ed1f2ce60567d5028e8fa8dd4
 		
 		// Adding all objects that are to be added.
 		objects.addAll(objectsToAdd);
 
+		// Remove all the items that need to be deleted.
+		objects.removeAll(objectsToRemove);
+		
 		// Remove all the items that need to be deleted.
 		objects.removeAll(objectsToRemove);
 		
@@ -131,7 +144,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void removeAnimatable(Animatable thingToRemove)
 	{
 		objectsToRemove.add(thingToRemove);
-		System.out.println("The remove animatable helper method was called.");
 	}
 
 	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 
@@ -142,6 +154,11 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		this.life -= amount;
 	}
+	
+	public int getLife()
+	{
+		return life;
+	}
 
 	/** Change the amount of credit the player has depending what they buy and how many karts they hit.  
 	 * 
@@ -149,7 +166,12 @@ public class GameState implements MouseMotionListener, MouseListener
 	 */	
 	public void creditEditor(int amount)
 	{
-		this.credit -= amount;
+		this.credit += amount;
+	}
+	
+	public int getCredit()
+	{
+		return credit;
 	}
 
 

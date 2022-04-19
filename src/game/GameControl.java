@@ -55,10 +55,7 @@ public class GameControl implements Runnable, ActionListener
 	 */
 	public void run ()
 	{
-		System.out.println("Hey -- I'm the GUI thread executing this code.");
-		
 		// Set up game objects.
-		
 		state = new GameState(this);
 		view = new GameView(state, this);
 		
