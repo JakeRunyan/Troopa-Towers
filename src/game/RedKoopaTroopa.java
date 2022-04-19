@@ -12,6 +12,7 @@ public class RedKoopaTroopa extends Tower
 	{
 		super(state, x, y);
 		state.creditEditor(-100);
+		
 	}
 
 	public void update(double elapsedTime)

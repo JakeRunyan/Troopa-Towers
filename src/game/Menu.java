@@ -29,8 +29,9 @@ public class Menu implements Animatable
 	 */
 	public void update(double elapsedTime)
 	{
-		state.getLife();
-		state.getCredit();
+		lives = state.getLife();
+		credit = state.getCredit();
+		
 	}
 
 	/** This function is to draw the menu background and the menu word.
@@ -57,7 +58,5 @@ public class Menu implements Animatable
 		g.setColor(Color.WHITE);
 		g.drawString("Credit", 690, 150);
 		g.drawString(Integer.toString(credit), 690, 175);
-		
-	
 	}
 }
