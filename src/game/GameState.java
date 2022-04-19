@@ -61,40 +61,6 @@ public class GameState implements MouseMotionListener, MouseListener
 		}
 	}
 	
-	/** An accessor method to get the mouse x coordinate. 
-	 * 
-	 * @return mouseX
-	 */
-	public int getMouseX()
-	{
-		return mouseX;
-	}
-	
-	/** An accessor method to get the mouse Y coordinate. 
-	 * 
-	 * @return mouseY
-	 */
-	public int getMouseY()
-	{
-		return mouseY;
-	}
-	
-	/** An accessor method to get if the mouse is clicked.
-	 * 
-	 * @return if the mouse is clicked or not.
-	 */
-	public boolean getMouseClicked()
-	{
-		return mouseClicked;
-	}
-	
-	/** An accessor method to consume the click.
-	 */
-	public void consumeClick()
-	{
-		mouseClicked = false;
-	}
-
 
 
 	// UPDATE AND DRAW HELPER METHODS
@@ -126,6 +92,9 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		for(Animatable item : objects)
 			item.update(elapsedTime);
+
+		// Remove all the items that need to be deleted.
+		objects.removeAll(objectsToRemove);
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
@@ -139,6 +108,17 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		objects.add(thingToAdd);
 		System.out.println("The add animatable helper method was called.");
+	}
+
+	/** Mutator method to remove things from the list of animatable objects. This method 
+	 *  creates a list of things to remove, and then those objects are removed at the end of the frame. 
+	 * 
+	 * @param thingToAdd - Whatever the user wants to add to the list of objects to animate. 
+	 */
+	public void removeAnimatable(Animatable thingToRemove)
+	{
+		objectsToRemove.add(thingToRemove);
+		System.out.println("The remove animatable helper method was called.");
 	}
 
 	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 
@@ -177,6 +157,40 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void mouseClicked(MouseEvent e)
 	{
 		mouseClicked = true;
+	}
+
+		/** An accessor method to get the mouse x coordinate. 
+	 * 
+	 * @return mouseX
+	 */
+	public int getMouseX()
+	{
+		return mouseX;
+	}
+	
+	/** An accessor method to get the mouse Y coordinate. 
+	 * 
+	 * @return mouseY
+	 */
+	public int getMouseY()
+	{
+		return mouseY;
+	}
+	
+	/** An accessor method to get if the mouse is clicked.
+	 * 
+	 * @return if the mouse is clicked or not.
+	 */
+	public boolean getMouseClicked()
+	{
+		return mouseClicked;
+	}
+	
+	/** An accessor method to consume the click.
+	 */
+	public void consumeClick()
+	{
+		mouseClicked = false;
 	}
 
 	public void mousePressed(MouseEvent e) {}
