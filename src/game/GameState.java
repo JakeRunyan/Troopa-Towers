@@ -45,8 +45,9 @@ public class GameState implements MouseMotionListener, MouseListener
 		objectsToRemove = new ArrayList<Animatable>();
 		
 		objects.add(new Background());
-		objects.add(new Menu(life, credit));
+		objects.add(new Menu(this));
 		objects.add(new GreenKoopaTroopaMenu(this, 635, 100));
+		objects.add(new RedKoopaTroopaMenu(this, 635, 200));
 		objects.add(new Mario(this));
 		
 		// Build our path
@@ -93,12 +94,12 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Updating all current objects.
 		for(Animatable item : objects)
 			item.update(elapsedTime);
-
-		// Remove all the items that need to be deleted.
-		objects.removeAll(objectsToRemove);
 		
 		// Adding all objects that are to be added.
 		objects.addAll(objectsToAdd);
+		
+		// Remove all the items that need to be deleted.
+		objects.removeAll(objectsToRemove);
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
@@ -132,6 +133,11 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		this.life -= amount;
 	}
+	
+	public int getLife()
+	{
+		return life;
+	}
 
 	/** Change the amount of credit the player has depending what they buy and how many karts they hit.  
 	 * 
@@ -139,7 +145,12 @@ public class GameState implements MouseMotionListener, MouseListener
 	 */	
 	public void creditEditor(int amount)
 	{
-		this.credit -= amount;
+		this.credit += amount;
+	}
+	
+	public int getCredit()
+	{
+		return credit;
 	}
 
 
