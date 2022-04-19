@@ -25,7 +25,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	private int timer;
 	private int life;
 	private int credit;
-	private boolean gameOver;
 	
 	private int mouseX, mouseY;
 	private boolean mouseClicked;
@@ -39,7 +38,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		this.control = control;
 		// Set Initial Life, Timer, and Credit
 		this.timer = 0;
-		this.life = 50;
+		this.life = 1;
 		this.credit = 600;
 
 		// Construct list of things to animate. 
@@ -63,10 +62,6 @@ public class GameState implements MouseMotionListener, MouseListener
 		{
 			e.printStackTrace();
 		}
-
-		// Set Game Over Flag
-		gameOver = false;
-
 	}
 	
 
@@ -91,11 +86,12 @@ public class GameState implements MouseMotionListener, MouseListener
 		for(Animatable singleObject : objects)
 			singleObject.draw(g, view);
 
-		if (gameOver) {
+		// If the game is over then draw the game over screen.
+		if (life <= 0) {
 			g.setColor(Color.RED);
 			g.fillRect(0, 0, 800, 600);
 			g.setColor(Color.WHITE);
-			g.drawString("GAME OVER", 300, 300);
+			g.drawString("GAME OVER", 350, 300);
 		}
 	}	
 	
@@ -126,7 +122,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		mouseClicked = false;
 
 		// Check if the Game Needs to End
-		if (life == 0)
+		if (life <= 0)
 			gameOver();
 		
 		// Update the timer
@@ -161,6 +157,10 @@ public class GameState implements MouseMotionListener, MouseListener
 		this.life -= amount;
 	}
 	
+	/** This helper method returns the current lives the player has.
+	 * 
+	 * @return life
+	 */
 	public int getLife()
 	{
 		return life;
@@ -175,17 +175,20 @@ public class GameState implements MouseMotionListener, MouseListener
 		this.credit += amount;
 	}
 	
+	/** This helper method returns the current credits the player has.
+	 * 
+	 * @return credit
+	 */
 	public int getCredit()
 	{
 		return credit;
 	}
 
+	/** This method clears all of the objects and makes game over true.
+	 */
 	public void gameOver() 
 	{
-		// Remove all the Objects from the Screen
-			objects.clear();
-
-			gameOver = true;
+		objects.clear();
 	}
 
 
