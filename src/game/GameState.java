@@ -97,9 +97,12 @@ public class GameState implements MouseMotionListener, MouseListener
 		for(Animatable item : objects)
 			item.update(elapsedTime);
 
-		// Add Mario objects as needed
+		// Add Mario and Luigi objects as needed
 		if (timer % 100 == 0)
 			objects.add(new Mario(this));
+		
+		if (timer % 250 == 10)
+			objects.add(new Luigi(this));
 		
 		// Adding and removing all objects that are to be added or removed.
 		objects.addAll(objectsToAdd);
@@ -132,7 +135,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void removeAnimatable(Animatable thingToRemove)
 	{
 		objectsToRemove.add(thingToRemove);
-		System.out.println("The remove animatable helper method was called.");
 	}
 
 	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 
