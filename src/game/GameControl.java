@@ -61,6 +61,9 @@ public class GameControl implements Runnable, ActionListener
 		
 		state = new GameState(this);
 		view = new GameView(state, this);
+
+		state.addAnimatable(new Background());
+		state.addAnimatable(new Menu());
 		
 		// Making a timer to trigger 60 times in a second.
 		timer = new Timer(16, this);

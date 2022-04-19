@@ -26,6 +26,7 @@ public class GameState
 	{
 		this.control = control;
 		
+		// Construct and add things to out list of things to animate. 
 		objects = new ArrayList<Animatable>();
 		
 		objects.add(new Background());
@@ -75,4 +76,22 @@ public class GameState
 	{
 		mario.update(elapsedTime);
 	}
+
+	/**
+	 * 
+	 * Mutator method to add things to the list of animateable objects. 
+	 * 
+	 * @param thingToAdd - Whatever the user wants to add to the list of objects to animate. 
+	 */
+	public void addAnimatable(Animatable thingToAdd) {
+
+		objects.add(thingToAdd);
+		System.out.println("The add animatable helper method was called.");
+	}
+
+	// NOTE FROM NATHAN - WE MAY WANT TO ADD A MUTATOR MATHOD TO 
+	//					  REMOVE THINGS FROMTHE LIST AS WELL. I 
+	//					  HAVENT ADDED IT YET BECASUE I WANTED TO
+	//		 			  SEE IF WE ACTUALLY NEEDED IT BEFORE I 
+	//					  WRITE IT. 
 }
