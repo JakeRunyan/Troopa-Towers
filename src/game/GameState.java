@@ -111,7 +111,6 @@ public class GameState implements MouseMotionListener, MouseListener
 
 		objectsToAdd.clear();
 		objectsToRemove.clear();
-<<<<<<< HEAD
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
 
@@ -120,15 +119,6 @@ public class GameState implements MouseMotionListener, MouseListener
 			gameOver();
 		
 		// Update the timer
-=======
-		
-		// If there hasn't been a mouse click that hasn't been consumed, consume it.
-		mouseClicked = false;
-
-//		// Check if the Game Needs to End
-//		if (life == 0)
-//			gameOver();
->>>>>>> 3f832905dce9b246c4b782590f018971311616b9
 		timer++;
 	}
 
