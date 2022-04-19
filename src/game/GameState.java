@@ -14,9 +14,6 @@ public class GameState
 	private GameControl control;
 	private Path path;
 	private List<Animatable> objects;
-	private Animatable background;  //
-	private Animatable menu;  //
-	private Animatable mario;  //
 	
 	/** Construct all the data needed track the state of the game. 
 	 * 
