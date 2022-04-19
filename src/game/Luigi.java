@@ -30,7 +30,7 @@ public class Luigi extends Enemy
 	public void draw(Graphics g, GameView view)
 	{
 		Point point = new Point(state.getPath().locatePosition(location));
-		view.drawCenteredImage(g, "resources/hd-peach.png", (int)point.getX(), (int)point.getY(), 35);
+		view.drawCenteredImage(g, "resources/luigi.png", (int)point.getX(), (int)point.getY(), 35);
 	}
 
 }

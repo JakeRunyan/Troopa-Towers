@@ -21,6 +21,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	private GameControl control;
 	private Path path;
 	
+	private int timer;
 	private int life;
 	private int credit;
 	private boolean gameOver;
@@ -35,7 +36,8 @@ public class GameState implements MouseMotionListener, MouseListener
 	public GameState (GameControl control)
 	{
 		this.control = control;
-		// Set Initial Life and Credit
+		// Set Initial Life, Timer, and Credit
+		this.timer = 0;
 		this.life = 100;
 		this.credit = 1000;
 
@@ -47,7 +49,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects.add(new Background());
 		objects.add(new Menu(life, credit));
 		objects.add(new KoopaTroopaMenu(this, 635, 100));
-		objects.add(new Mario(this));
+
 		
 		// Build our path
 		try
@@ -94,14 +96,21 @@ public class GameState implements MouseMotionListener, MouseListener
 		for(Animatable item : objects)
 			item.update(elapsedTime);
 
-		// Remove all the items that need to be deleted.
-		objects.removeAll(objectsToRemove);
+		// Add Mario objects as needed
+		if (timer % 100 == 0)
+		addAnimatable(new Mario(this));
 		
 		// Adding all objects that are to be added.
 		objects.addAll(objectsToAdd);
+
+		// Remove all the items that need to be deleted.
+		objects.removeAll(objectsToRemove);
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
+
+		// Update the timer
+		timer ++;
 	}
 
 	/** Mutator method to add things to the list of animatable objects. 
@@ -111,6 +120,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void addAnimatable(Animatable thingToAdd)
 	{
 		objectsToAdd.add(thingToAdd);
+		System.out.println("The add animatable helper method was called.");
 	}
 
 	/** Mutator method to remove things from the list of animatable objects. This method 

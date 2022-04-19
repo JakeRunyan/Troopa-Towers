@@ -33,10 +33,10 @@ public class Mario extends Enemy
 		location += .002;
 		if (location >= 1)
 		{
-			location = 0;
+			state.removeAnimatable(this);
 		}
 	}
-	
+
 	/**
 	 * Puts mario on the screen every time the frame is updated. 
 	 * 
