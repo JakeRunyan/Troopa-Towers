@@ -122,7 +122,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void removeAnimatable(Animatable thingToRemove)
 	{
 		objectsToRemove.add(thingToRemove);
-		System.out.println("The remove animatable helper method was called.");
 	}
 
 	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 

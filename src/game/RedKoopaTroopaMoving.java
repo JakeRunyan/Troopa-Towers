@@ -23,6 +23,7 @@ public class RedKoopaTroopaMoving extends Tower
 			{
 				state.consumeClick();
 				state.addAnimatable(new RedKoopaTroopa(state, x, y));
+				state.removeAnimatable(this);
 			}
 		}
 	}
