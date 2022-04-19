@@ -63,6 +63,10 @@ public class GameState implements MouseMotionListener, MouseListener
 		{
 			e.printStackTrace();
 		}
+
+		// Set Game Over Flag
+		gameOver = false;
+
 	}
 	
 
@@ -86,6 +90,13 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		for(Animatable singleObject : objects)
 			singleObject.draw(g, view);
+
+		if (gameOver) {
+			g.setColor(Color.RED);
+			g.fillRect(0, 0, 800, 600);
+			g.setColor(Color.WHITE);
+			g.drawString("GAME OVER", 300, 300);
+		}
 	}	
 	
 	/**	Right now, this method updates all the items.
@@ -173,10 +184,8 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		// Remove all the Objects from the Screen
 			objects.clear();
-		// Make screen that says game over
-			// g.setColor(Color.RED);
-			// g.fillRect(0, 0, 800, 600);
-			// g.drawString("GAME OVER", 300, 300);
+
+			gameOver = true;
 	}
 
 
