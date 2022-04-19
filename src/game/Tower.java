@@ -7,10 +7,11 @@ abstract public class Tower implements Animatable
 	protected int cost;
 	protected GameState state;
 	
-	public Tower(GameState state, int x, int y)
+	public Tower(GameState state, int x, int y, int cost)
 	{
 		this.state = state;
 		this.x = x;
 		this.y = y;
+		this.cost = cost;
 	}
 }

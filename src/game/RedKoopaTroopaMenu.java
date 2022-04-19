@@ -9,14 +9,14 @@ public class RedKoopaTroopaMenu extends Tower
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public RedKoopaTroopaMenu(GameState state, int x, int y)
+	public RedKoopaTroopaMenu(GameState state, int x, int y, int cost)
 	{
-		super(state, x, y);
+		super(state, x, y, cost);
 	}
 
 	public void update(double elapsedTime)
 	{
-		if(state.getMouseClicked())
+		if(state.getMouseClicked() && state.getCredit() >= cost)
 		{
 			int deltaX = Math.abs(x - state.getMouseX());
 			int deltaY = Math.abs(y -state.getMouseY());
@@ -24,7 +24,7 @@ public class RedKoopaTroopaMenu extends Tower
 			if(deltaX < 40 && deltaY < 40)
 			{
 				state.consumeClick();
-				state.addAnimatable(new RedKoopaTroopaMoving(state, x, y));
+				state.addAnimatable(new RedKoopaTroopaMoving(state, x, y, cost));
 			}
 		}
 	}

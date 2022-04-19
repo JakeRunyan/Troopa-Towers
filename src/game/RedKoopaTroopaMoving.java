@@ -8,9 +8,9 @@ public class RedKoopaTroopaMoving extends Tower
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public RedKoopaTroopaMoving(GameState state, int x, int y)
+	public RedKoopaTroopaMoving(GameState state, int x, int y, int cost)
 	{
-		super(state, x, y);
+		super(state, x, y, cost);
 	}
 
 	public void update(double elapsedTime)
@@ -22,7 +22,7 @@ public class RedKoopaTroopaMoving extends Tower
 			if(x < 600 && y < 600)
 			{
 				state.consumeClick();
-				state.addAnimatable(new RedKoopaTroopa(state, x, y));
+				state.addAnimatable(new RedKoopaTroopa(state, x, y, cost));
 				state.removeAnimatable(this);
 			}
 		}
