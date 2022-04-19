@@ -23,7 +23,9 @@ public class Luigi extends Enemy
 		location += .002;
 		if (location >= 1)
 		{
+			state.removeAnimatable(this);
 			location = 0;
+			state.lifeEditor(2);
 		}
 	}
 

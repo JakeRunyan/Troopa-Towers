@@ -38,7 +38,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		this.control = control;
 		// Set Initial Life, Timer, and Credit
 		this.timer = 0;
-		this.life = 100;
+		this.life = 50;
 		this.credit = 600;
 
 		// Construct list of things to animate. 
@@ -50,7 +50,8 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects.add(new Menu(this));
 		objects.add(new GreenKoopaTroopaMenu(this, 635, 100));
 		objects.add(new RedKoopaTroopaMenu(this, 635, 200));
-		//objects.add(new Mario(this));
+		objects.add(new Mario(this));
+		
 		
 		// Build our path
 		try
@@ -99,7 +100,7 @@ public class GameState implements MouseMotionListener, MouseListener
 
 		// Add Mario objects as needed
 		if (timer % 100 == 0)
-			addAnimatable(new Mario(this));
+			objects.add(new Mario(this));
 		
 		// Adding and removing all objects that are to be added or removed.
 		objects.addAll(objectsToAdd);

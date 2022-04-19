@@ -30,7 +30,7 @@ public class Mario extends Enemy
 	 */
 	public void update(double elapsedTime)
 	{
-		location += elapsedTime;
+		location += .002;
 		if (location >= 1)
 		{
 			state.removeAnimatable(this);
