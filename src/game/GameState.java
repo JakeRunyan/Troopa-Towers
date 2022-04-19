@@ -4,11 +4,14 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class GameState 
+public class GameState implements MouseMotionListener, MouseListener
 {
 	// Fields
 	private GameControl control;
@@ -81,6 +84,50 @@ public class GameState
 	{
 		objects.add(thingToAdd);
 		System.out.println("The add animatable helper method was called.");
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e)
+	{
+		System.out.println(e.getX() + " " + e.getY());
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	// NOTE FROM NATHAN - WE MAY WANT TO ADD A MUTATOR MATHOD TO 

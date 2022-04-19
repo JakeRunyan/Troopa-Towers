@@ -62,6 +62,10 @@ public class GameControl implements Runnable, ActionListener
 		state = new GameState(this);
 		view = new GameView(state, this);
 		
+		// Making mouse Listeners
+		view.addMouseListener(state);
+		view.addMouseMotionListener(state);
+		
 		// Making a timer to trigger 60 times in a second.
 		timer = new Timer(16, this);
 		timer.start();
