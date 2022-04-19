@@ -47,16 +47,10 @@ public class GameState implements MouseMotionListener, MouseListener
 		objectsToRemove = new ArrayList<Animatable>();
 		
 		objects.add(new Background());
-<<<<<<< HEAD
-		objects.add(new Menu(life, credit));
-		objects.add(new KoopaTroopaMenu(this, 635, 100));
-
-=======
 		objects.add(new Menu(this));
 		objects.add(new GreenKoopaTroopaMenu(this, 635, 100));
 		objects.add(new RedKoopaTroopaMenu(this, 635, 200));
-		objects.add(new Mario(this));
->>>>>>> 0480b0ea8abc224ed1f2ce60567d5028e8fa8dd4
+		//objects.add(new Mario(this));
 		
 		// Build our path
 		try
@@ -102,21 +96,13 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Updating all current objects.
 		for(Animatable item : objects)
 			item.update(elapsedTime);
-<<<<<<< HEAD
 
 		// Add Mario objects as needed
 		if (timer % 100 == 0)
-		addAnimatable(new Mario(this));
-=======
->>>>>>> 0480b0ea8abc224ed1f2ce60567d5028e8fa8dd4
+			addAnimatable(new Mario(this));
 		
-		// Adding all objects that are to be added.
+		// Adding and removing all objects that are to be added or removed.
 		objects.addAll(objectsToAdd);
-
-		// Remove all the items that need to be deleted.
-		objects.removeAll(objectsToRemove);
-		
-		// Remove all the items that need to be deleted.
 		objects.removeAll(objectsToRemove);
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
@@ -133,7 +119,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void addAnimatable(Animatable thingToAdd)
 	{
 		objectsToAdd.add(thingToAdd);
-		System.out.println("The add animatable helper method was called.");
 	}
 
 	/** Mutator method to remove things from the list of animatable objects. This method 
@@ -144,6 +129,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	public void removeAnimatable(Animatable thingToRemove)
 	{
 		objectsToRemove.add(thingToRemove);
+		System.out.println("The remove animatable helper method was called.");
 	}
 
 	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 
