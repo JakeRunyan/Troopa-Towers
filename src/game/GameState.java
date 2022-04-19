@@ -4,6 +4,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -104,29 +105,18 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Adding and removing all objects that are to be added or removed.
 		objects.addAll(objectsToAdd);
 		objects.removeAll(objectsToRemove);
-<<<<<<< HEAD
 
 		objectsToAdd.clear();
 		objectsToRemove.clear();
-=======
-		
-		objectsToAdd.clear();
-		objectsToRemove.clear();
-		
->>>>>>> 178cf316a60bbb060bf4e8a55b88cac44b049f15
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
-
-		// Update the timer
-<<<<<<< HEAD
-		timer ++;
 
 		// Check if the Game Needs to End
 		if (life == 0)
 			gameOver();
-=======
+		
+		// Update the timer
 		timer++;
->>>>>>> 178cf316a60bbb060bf4e8a55b88cac44b049f15
 	}
 
 	/** Mutator method to add things to the list of animatable objects. 
@@ -177,13 +167,14 @@ public class GameState implements MouseMotionListener, MouseListener
 		return credit;
 	}
 
-	public void gameOver(Graphics g) 
+	public void gameOver() 
 	{
 		// Remove all the Objects from the Screen
 			objects.clear();
 		// Make screen that says game over
-			
-
+			// g.setColor(Color.RED);
+			// g.fillRect(0, 0, 800, 600);
+			// g.drawString("GAME OVER", 300, 300);
 	}
 
 
