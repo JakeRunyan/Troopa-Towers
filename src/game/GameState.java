@@ -46,7 +46,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		
 		objects.add(new Background());
 		objects.add(new Menu(life, credit));
-		objects.add(new KoopaTroopaMenu(this, 635, 100));
+		objects.add(new GreenKoopaTroopaMenu(this, 635, 100));
 		objects.add(new Mario(this));
 		
 		// Build our path

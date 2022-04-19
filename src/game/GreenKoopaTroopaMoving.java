@@ -2,13 +2,13 @@ package game;
 
 import java.awt.Graphics;
 
-public class KoopaTroopaMoving extends Tower
+public class GreenKoopaTroopaMoving extends Tower
 {
 	/** Constructor for the KoopaTroopa object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public KoopaTroopaMoving(GameState state, int x, int y)
+	public GreenKoopaTroopaMoving(GameState state, int x, int y)
 	{
 		super(state, x, y);
 		System.out.println("This is being called");
@@ -23,7 +23,7 @@ public class KoopaTroopaMoving extends Tower
 			if(x < 600 && y < 600)
 			{
 				state.consumeClick();
-				state.addAnimatable(new KoopaTroopa(state, x, y));
+				state.addAnimatable(new GreenKoopaTroopa(state, x, y));
 			}
 		}
 	}
