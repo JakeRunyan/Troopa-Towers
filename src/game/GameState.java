@@ -14,12 +14,17 @@ import java.util.*;
 public class GameState implements MouseMotionListener, MouseListener
 {
 	// Fields
+	private List<Animatable> objects;
+	private List<Animatable> objectsToAdd;
+	private List<Animatable> objectsToRemove;
+	
 	private GameControl control;
 	private Path path;
+	
 	private int life;
 	private int credit;
 	private boolean gameOver;
-	private List<Animatable> objects;
+	
 	private int mouseX, mouseY;
 	private boolean mouseClicked;
 	
