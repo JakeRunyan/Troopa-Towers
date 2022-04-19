@@ -50,7 +50,6 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects.add(new Menu(this));
 		objects.add(new GreenKoopaTroopaMenu(this, 635, 100));
 		objects.add(new RedKoopaTroopaMenu(this, 635, 200));
-		objects.add(new Mario(this));
 		
 		
 		// Build our path
@@ -105,18 +104,29 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Adding and removing all objects that are to be added or removed.
 		objects.addAll(objectsToAdd);
 		objects.removeAll(objectsToRemove);
+<<<<<<< HEAD
 
 		objectsToAdd.clear();
 		objectsToRemove.clear();
+=======
+		
+		objectsToAdd.clear();
+		objectsToRemove.clear();
+		
+>>>>>>> 178cf316a60bbb060bf4e8a55b88cac44b049f15
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
 
 		// Update the timer
+<<<<<<< HEAD
 		timer ++;
 
 		// Check if the Game Needs to End
 		if (life == 0)
 			gameOver();
+=======
+		timer++;
+>>>>>>> 178cf316a60bbb060bf4e8a55b88cac44b049f15
 	}
 
 	/** Mutator method to add things to the list of animatable objects. 
