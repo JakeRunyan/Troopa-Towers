@@ -14,11 +14,15 @@ public class RedKoopaTroopa extends Tower
 		state.creditEditor(-cost);
 	}
 
+	/** This will update the tower.
+	 */
 	public void update(double elapsedTime)
 	{
 		
 	}
 
+	/** This draws the tower.
+	 */
 	public void draw(Graphics g, GameView view)
 	{
 		view.drawCenteredImage(g, "resources/red_koopa_troopa.png", x, y, 55);

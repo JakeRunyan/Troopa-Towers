@@ -14,6 +14,9 @@ public class RedKoopaTroopaMenu extends Tower
 		super(state, x, y, cost);
 	}
 
+	/** If the mouse is clicked and if the player has enough credits. This will click on it.
+	 * If the mouse is over the image it will work.
+	 */
 	public void update(double elapsedTime)
 	{
 		if(state.getMouseClicked() && state.getCredit() >= cost)
@@ -29,6 +32,8 @@ public class RedKoopaTroopaMenu extends Tower
 		}
 	}
 
+	/** This draws the tower.
+	 */
 	public void draw(Graphics g, GameView view)
 	{
 		view.drawCenteredImage(g, "resources/red_koopa_troopa.png", x, y, 55);

@@ -13,6 +13,9 @@ public class GreenKoopaTroopaMoving extends Tower
 		super(state, x, y, cost);
 	}
 
+	/** This will update the tower to follow the mouse until it gets clicked.
+	 * Then it places a new tower where it is clicked and removes the current one.
+	 */
 	public void update(double elapsedTime)
 	{
 		x = state.getMouseX();
@@ -28,6 +31,8 @@ public class GreenKoopaTroopaMoving extends Tower
 		}
 	}
 
+	/** This draws the tower.
+	 */
 	public void draw(Graphics g, GameView view)
 	{
 		view.drawCenteredImage(g, "resources/green_koopa_troopa.png", x, y, 55);

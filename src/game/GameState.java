@@ -36,7 +36,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		// Set Initial Life, Timer, and Credit
 		this.timer = 0;
-		this.life = 1;
+		this.life = 100;
 		this.credit = 600;
 
 		// Construct list of things to animate. 
