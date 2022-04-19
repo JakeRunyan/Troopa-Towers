@@ -21,6 +21,6 @@ public class KoopaTroopaMenu extends Tower
 
 	public void draw(Graphics g, GameView view)
 	{
-		view.drawCenteredImage(g, "resources/koopa_troopa.png", 635, 100, 55);
+		view.drawCenteredImage(g, "resources/koopa_troopa.png", x, y, 55);
 	}
 }
