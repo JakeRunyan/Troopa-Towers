@@ -30,7 +30,10 @@ public class GameState implements MouseMotionListener, MouseListener
 	public GameState (GameControl control)
 	{
 		this.control = control;
-		
+		// Set Initial Life and Credit
+		this.life = 100;
+		this.credit = 1000;
+
 		// Construct list of things to animate. 
 		objects = new ArrayList<Animatable>();
 		
@@ -51,6 +54,9 @@ public class GameState implements MouseMotionListener, MouseListener
 		}
 	}
 
+
+
+	// UPDATE AND DRAW HELPER METHODS
 	/** Load the path to use into the game. 
 	 * 
 	 * @return a path to use in the game. 
@@ -91,6 +97,26 @@ public class GameState implements MouseMotionListener, MouseListener
 		System.out.println("The add animatable helper method was called.");
 	}
 
+	/** Change the amount of life the player has depending on how hard they are hit by the enemy. 
+	 * 
+	 * @param amount The amount of life to add or subtract. Can be positive or negative.  
+	 */	
+	public void lifeEditor(int amount)
+	{
+		this.life -= amount;
+	}
+
+	/** Change the amount of credit the player has depending what they buy and how many karts they hit.  
+	 * 
+	 * @param amount The amount of credit to add or subtract. Can be positive or negative.  
+	 */	
+	public void creditEditor(int amount)
+	{
+		this.credit -= amount;
+	}
+
+
+	// MOUSE EVENTS
 	public void mouseDragged(MouseEvent e)
 	{
 		// TODO Auto-generated method stub
