@@ -28,6 +28,7 @@ public class GameState
 		
 		objects.add(new Background());
 		objects.add(new Menu());
+		objects.add(new KoopaTroopa());
 		objects.add(new Mario(this));
 		
 		// Build our path
@@ -59,9 +60,7 @@ public class GameState
 	public void drawAll(Graphics g, GameView view)
 	{
 		for( Animatable singleObject : objects)
-		{
 			singleObject.draw(g, view);
-		}
 	}	
 	
 	/**	Right now, this method updates all the items.
@@ -71,9 +70,7 @@ public class GameState
 	public void updateAll(double elapsedTime)
 	{
 		for(Animatable item : objects)
-		{
 			item.update(elapsedTime);
-		}
 	}
 
 	/** Mutator method to add things to the list of animatable objects. 

@@ -70,6 +70,6 @@ public class GameView extends JPanel
 	 */
 	public void drawCenteredImage(Graphics g, String name, int x, int y, int scale) 
 	{
-		g.drawImage(control.loadImage(name), x-scale/2, y-scale/2, scale, scale, null);
+			g.drawImage(control.loadImage(name), x-scale/2, y-scale/2, scale, scale, null);
 	}
 }

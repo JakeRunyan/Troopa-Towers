@@ -6,16 +6,15 @@ package game;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class Mario implements Animatable
+public class Mario extends Enemy
 {
 	private double location;
 	private GameState state;
 	
-
 	/**
 	 * Constructor for the Mario object. 
 	 * 
-	 * @param state Passes in the GameState object so to draw the marion with the correct information. 
+	 * @param state Passes in the GameState object so to draw the Mario with the correct information. 
 	 */
 	public Mario(GameState state) 
 	{
