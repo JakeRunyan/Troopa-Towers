@@ -35,6 +35,7 @@ public class Mario extends Enemy
 		{
 			state.removeAnimatable(this);
 			location = 0;
+			state.lifeEditor(1);
 		}
 	}
 
