@@ -19,6 +19,8 @@ public class GameState implements MouseMotionListener, MouseListener
 	private int life;
 	private int credit;
 	private List<Animatable> objects;
+	private int MouseX, MouseY;
+	private boolean mouseClicked;
 	
 	/** Construct all the data needed track the state of the game. 
 	 * 
@@ -64,7 +66,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	 */
 	public void drawAll(Graphics g, GameView view)
 	{
-		for( Animatable singleObject : objects)
+		for(Animatable singleObject : objects)
 			singleObject.draw(g, view);
 	}	
 	
@@ -88,24 +90,27 @@ public class GameState implements MouseMotionListener, MouseListener
 		System.out.println("The add animatable helper method was called.");
 	}
 
-	@Override
 	public void mouseDragged(MouseEvent e)
 	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseMoved(MouseEvent e)
 	{
 		System.out.println(e.getX() + " " + e.getY());
 		
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	public void mouseClicked(MouseEvent e)
+	{
+		for (Animatable a : objects)
+		{
+			if (a instanceof Tower)
+			{
+				
+			}
+		}
 	}
 
 	@Override
