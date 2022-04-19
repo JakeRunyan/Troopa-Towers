@@ -9,12 +9,17 @@ import java.awt.Graphics;
 
 public class Menu implements Animatable
 {
+
+	private Integer lives;
+	private Integer credit;
+
 	/**
 	 * Nothing to construct or store in the object. Just need to draw the menu on the screen.
 	 */
-	public Menu()
+	public Menu(int lives, int credit)
 	{
-		
+		this.lives = lives;
+		this.credit = credit;
 	}
 	
 	/**
@@ -32,14 +37,24 @@ public class Menu implements Animatable
 	 */
 	public void draw(Graphics g, GameView view)
 	{
+		// Menu Rectangle
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(600, 0, 800, 600);
 
+		// Menu Header
+		g.setColor(Color.WHITE);
+		g.drawString("MENU", 690, 50);
+
+		// Print out the amount of lives
 		g.setColor(Color.WHITE);
 		g.drawString("Lives", 690, 75);
-		g.drawString("Insert Lives Here", 690, 100);
-		
+		g.drawString(Integer.toString(lives), 690, 100);
+
+		// Print out the Amount of Credit
 		g.setColor(Color.WHITE);
-		g.drawString("Menu", 690, 50);
+		g.drawString("Credit", 690, 150);
+		g.drawString(Integer.toString(credit), 690, 175);
+		
+	
 	}
 }

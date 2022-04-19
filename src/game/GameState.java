@@ -16,6 +16,8 @@ public class GameState implements MouseMotionListener, MouseListener
 	// Fields
 	private GameControl control;
 	private Path path;
+	private int life;
+	private int credit;
 	private List<Animatable> objects;
 	
 	/** Construct all the data needed track the state of the game. 
@@ -30,7 +32,7 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects = new ArrayList<Animatable>();
 		
 		objects.add(new Background());
-		objects.add(new Menu());
+		objects.add(new Menu(life, credit));
 		objects.add(new KoopaTroopaMenu());
 		objects.add(new Mario(this));
 		
