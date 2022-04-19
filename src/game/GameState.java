@@ -98,7 +98,7 @@ public class GameState implements MouseMotionListener, MouseListener
 			item.update(elapsedTime);
 
 		// Add Mario and Luigi objects as needed
-		if (timer % 25 == 0)
+		if (timer % 50 == 0)
 			objects.add(new Mario(this));
 		
 		if (timer % 250 == 10)
@@ -114,9 +114,9 @@ public class GameState implements MouseMotionListener, MouseListener
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
 
-		// Check if the Game Needs to End
-		if (life == 0)
-			gameOver();
+//		// Check if the Game Needs to End
+//		if (life == 0)
+//			gameOver();
 		timer++;
 	}
 
