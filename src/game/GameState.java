@@ -19,7 +19,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	private List<Animatable> objectsToAdd;
 	private List<Animatable> objectsToRemove;
 	
-	private GameControl control;
 	private Path path;
 	
 	private int timer;
@@ -35,7 +34,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	 */
 	public GameState (GameControl control)
 	{
-		this.control = control;
 		// Set Initial Life, Timer, and Credit
 		this.timer = 0;
 		this.life = 1;
