@@ -18,6 +18,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	private Path path;
 	private int life;
 	private int credit;
+	private boolean gameOver;
 	private List<Animatable> objects;
 	
 	/** Construct all the data needed track the state of the game. 
