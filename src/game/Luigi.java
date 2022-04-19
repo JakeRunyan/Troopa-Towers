@@ -20,7 +20,7 @@ public class Luigi extends Enemy
 	
 	public void update(double elapsedTime)
 	{
-		location += .002;
+		location += .003;
 		if (location >= 1)
 		{
 			state.removeAnimatable(this);
