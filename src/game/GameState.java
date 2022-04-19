@@ -93,10 +93,12 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Updating all current objects.
 		for(Animatable item : objects)
 			item.update(elapsedTime);
-		
-		// Adding and removing all objects that are to be added or removed.
-		objects.addAll(objectsToAdd);
+
+		// Remove all the items that need to be deleted.
 		objects.removeAll(objectsToRemove);
+		
+		// Adding all objects that are to be added.
+		objects.addAll(objectsToAdd);
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
@@ -202,9 +204,4 @@ public class GameState implements MouseMotionListener, MouseListener
 
 	public void mouseExited(MouseEvent e) {}
 
-	// NOTE FROM NATHAN - WE MAY WANT TO ADD A MUTATOR MATHOD TO 
-	//					  REMOVE THINGS FROM THE LIST AS WELL. I 
-	//					  HAVENT ADDED IT YET BECASUE I WANTED TO
-	//		 			  SEE IF WE ACTUALLY NEEDED IT BEFORE I 
-	//					  WRITE IT. 
 }
