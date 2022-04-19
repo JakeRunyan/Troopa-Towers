@@ -41,6 +41,8 @@ public class GameState implements MouseMotionListener, MouseListener
 
 		// Construct list of things to animate. 
 		objects = new ArrayList<Animatable>();
+		objectsToAdd = new ArrayList<Animatable>();
+		objectsToRemove = new ArrayList<Animatable>();
 		
 		objects.add(new Background());
 		objects.add(new Menu(life, credit));
