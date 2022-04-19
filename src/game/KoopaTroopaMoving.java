@@ -11,16 +11,17 @@ public class KoopaTroopaMoving extends Tower
 	public KoopaTroopaMoving(GameState state, int x, int y)
 	{
 		super(state, x, y);
+		System.out.println("This is being called");
 	}
 
 	public void update(double elapsedTime)
 	{
-//		if(MouseX < 600)
-//			;
+		x = state.getMouseX();
+		y = state.getMouseY();
 	}
 
 	public void draw(Graphics g, GameView view)
 	{
-		
+		view.drawCenteredImage(g, "resources/koopa_troopa.png", x, y, 55);
 	}
 }
