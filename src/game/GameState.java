@@ -26,11 +26,9 @@ public class GameState
 	{
 		this.control = control;
 		
-		// Construct and add things to out list of things to animate. 
+		// Construct list of things to animate. 
 		objects = new ArrayList<Animatable>();
 		
-		objects.add(new Background());
-		objects.add(new Menu());
 		objects.add(new Mario(this)); // pass in things from game state becasue mario is one of the moving items on the screen. 
 		
 		// Build our path
