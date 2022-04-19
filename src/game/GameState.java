@@ -98,7 +98,7 @@ public class GameState implements MouseMotionListener, MouseListener
 			item.update(elapsedTime);
 
 		// Add Mario and Luigi objects as needed
-		if (timer % 100 == 0)
+		if (timer % 25 == 0)
 			objects.add(new Mario(this));
 		
 		if (timer % 250 == 10)
@@ -107,14 +107,16 @@ public class GameState implements MouseMotionListener, MouseListener
 		// Adding and removing all objects that are to be added or removed.
 		objects.addAll(objectsToAdd);
 		objects.removeAll(objectsToRemove);
-		
+
 		objectsToAdd.clear();
 		objectsToRemove.clear();
 		
 		// If there hasn't been a mouse click that hasn't been consumed, consume it.
 		mouseClicked = false;
 
-		// Update the timer
+		// Check if the Game Needs to End
+		if (life == 0)
+			gameOver();
 		timer++;
 	}
 
@@ -164,6 +166,29 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		return credit;
 	}
+
+	public void gameOver(Graphics g) 
+	{
+		// Remove all the Objects from the Screen
+			objects.clear();
+		// Make screen that says game over
+			
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	// MOUSE EVENTS
