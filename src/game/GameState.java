@@ -40,18 +40,16 @@ public class GameState implements MouseMotionListener, MouseListener
 		this.life = 100;
 		this.credit = 600;
 		
-
-		// Construct list of things to animate. 
+		// Construct list of things to animate.
 		objects = new ArrayList<Animatable>();
 		objectsToAdd = new ArrayList<Animatable>();
 		objectsToRemove = new ArrayList<Animatable>();
 		
+		objects.add(new Background());
+		objects.add(new Menu(this));
 		objects.add(new StartButton());
-		gameStarted = true;
-		if(gameStarted)
+		if (gameStarted)
 		{
-			objects.add(new Background());
-			objects.add(new Menu(this));
 			objects.add(new GreenKoopaTroopaMenu(this, 635, 100, 50));
 			objects.add(new RedKoopaTroopaMenu(this, 635, 200, 100));
 		}
