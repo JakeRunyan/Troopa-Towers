@@ -7,18 +7,18 @@ package game;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class DyingMario implements Animatable {
+public class LuigiDying implements Animatable {
 
     private double location;
     private GameState state;
     private int scale;
 
     /**
-	 * Constructor for the Mario object. 
+	 * Constructor for the Luigi object. 
 	 * 
-	 * @param state Passes in the GameState object so to draw the Mario with the correct information. 
+	 * @param state Passes in the GameState object so to draw the Luigi with the correct information. 
 	 */
-	public DyingMario(GameState state) {
+	public LuigiDying(GameState state) {
 		this.state = state;
         this.scale = 35;
         // this.location = 
