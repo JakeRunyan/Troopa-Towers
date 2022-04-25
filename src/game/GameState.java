@@ -24,6 +24,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	private int timer;
 	private int life;
 	private int credit;
+	private boolean gameStarted;
 	
 	private int mouseX, mouseY;
 	private boolean mouseClicked;
@@ -38,17 +39,22 @@ public class GameState implements MouseMotionListener, MouseListener
 		this.timer = 0;
 		this.life = 100;
 		this.credit = 600;
+		
 
 		// Construct list of things to animate. 
 		objects = new ArrayList<Animatable>();
 		objectsToAdd = new ArrayList<Animatable>();
 		objectsToRemove = new ArrayList<Animatable>();
 		
-		objects.add(new Background());
-		objects.add(new Menu(this));
-		objects.add(new GreenKoopaTroopaMenu(this, 635, 100, 50));
-		objects.add(new RedKoopaTroopaMenu(this, 635, 200, 100));
 		
+		
+		if(gameStarted)
+		{
+			objects.add(new Background());
+			objects.add(new Menu(this));
+			objects.add(new GreenKoopaTroopaMenu(this, 635, 100, 50));
+			objects.add(new RedKoopaTroopaMenu(this, 635, 200, 100));
+		}
 		
 		// Build our path
 		try
@@ -205,23 +211,18 @@ public class GameState implements MouseMotionListener, MouseListener
 
 
 	// MOUSE EVENTS
-	public void mouseDragged(MouseEvent e)
-	{
-		mouseClicked = true;
-		
-	}
-
 	public void mouseMoved(MouseEvent e)
 	{
 		mouseX = e.getX();
 		mouseY = e.getY();
-		
 	}
 
-	public void mouseClicked(MouseEvent e)
+	public void mousePressed(MouseEvent e)
 	{
-		// mouseClicked = true;
+		mouseClicked = true;
 	}
+	
+	
 
 		/** An accessor method to get the mouse x coordinate. 
 	 * 
@@ -257,7 +258,9 @@ public class GameState implements MouseMotionListener, MouseListener
 		mouseClicked = false;
 	}
 
-	public void mousePressed(MouseEvent e) {}
+	public void mouseClicked(MouseEvent e) {}
+	
+	public void mouseDragged(MouseEvent e) {}
 
 	public void mouseReleased(MouseEvent e) {}
 
