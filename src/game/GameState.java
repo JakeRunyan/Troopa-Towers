@@ -46,8 +46,8 @@ public class GameState implements MouseMotionListener, MouseListener
 		objectsToAdd = new ArrayList<Animatable>();
 		objectsToRemove = new ArrayList<Animatable>();
 		
-		
-		
+		objects.add(new StartButton());
+		gameStarted = true;
 		if(gameStarted)
 		{
 			objects.add(new Background());
@@ -110,10 +110,10 @@ public class GameState implements MouseMotionListener, MouseListener
 			item.update(elapsedTime);
 
 		// Add Mario and Luigi objects as needed
-		if (timer % 50 == 0)
+		if (timer % 50 == 0 && gameStarted)
 			objects.add(new Mario(this));
 		
-		if (timer % 250 == 10)
+		if (timer % 250 == 10 && gameStarted)
 			objects.add(new Luigi(this));
 		
 		// Adding and removing all objects that are to be added or removed.
