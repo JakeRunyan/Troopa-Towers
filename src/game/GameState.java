@@ -207,7 +207,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	// MOUSE EVENTS
 	public void mouseDragged(MouseEvent e)
 	{
-		// TODO Auto-generated method stub
+		mouseClicked = true;
 		
 	}
 
@@ -220,7 +220,7 @@ public class GameState implements MouseMotionListener, MouseListener
 
 	public void mouseClicked(MouseEvent e)
 	{
-		mouseClicked = true;
+		// mouseClicked = true;
 	}
 
 		/** An accessor method to get the mouse x coordinate. 
