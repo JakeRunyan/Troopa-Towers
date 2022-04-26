@@ -34,6 +34,8 @@ public class FXRedShell extends FX {
 		view.drawCenteredImage(g, "resources/red_shell.png", (int) x, (int) y, 35);
 	}
 	
+
+	// Jake is gay and happy
 	
 	
 
