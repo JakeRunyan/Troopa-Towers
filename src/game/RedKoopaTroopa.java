@@ -22,17 +22,21 @@ public class RedKoopaTroopa extends Tower
 	{
 		// One second since last shot?
 		timeSinceLastShot += elapsedTime;
-		if (timeSinceLastShot < 1.0)
+		if (timeSinceLastShot < 0.25)
 			return; // Do not shoot anything
-		
-		Enemy e = state.findNearestEnemy(x, y);
+
+		Enemy e = state.findNearestEnemy(x, y);        // Find an enemy within range
+
 		Point p = new Point(x, y);
-		
+
 		if(e != null)
 		{
-			if(e.getLocation().distance(p) < 75)
+			if (e.getLocation().distance(p) < 75)
 			{
+				int deltaX = e.getLocation().x - x;
+				int deltaY = e.getLocation().y - y;
 				
+				state.addAnimatable(new FXRedShell(state, x, y, deltaX, deltaY));
 				timeSinceLastShot = 0;
 			}
 		}

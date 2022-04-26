@@ -106,7 +106,7 @@ public class GameState implements MouseMotionListener, MouseListener
 			item.update(elapsedTime);
 
 		// Add Mario and Luigi objects as needed
-		if (timer % 50 == 0 && gameStarted)
+		if (timer % 75 == 0 && gameStarted)
 			objects.add(new Mario(this));
 		
 		if (timer % 250 == 10 && gameStarted)
