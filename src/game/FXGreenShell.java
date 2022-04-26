@@ -29,7 +29,6 @@ public class FXGreenShell extends FX {
 		y = y + deltaY * elapsedTime * 7;
 	}
 	
-	@Override
 	public void draw(Graphics g, GameView view) {
 		// TODO Auto-generated method stub
 		view.drawCenteredImage(g, "resources/green_shell.png", (int) x, (int) y, 35);
