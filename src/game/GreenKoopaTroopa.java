@@ -23,7 +23,7 @@ public class GreenKoopaTroopa extends Tower
 
 		Point p = new Point(x, y);
 
-		if (e.getLocation().distance(p) < 50) {
+		if (e.getLocation().distance(p) < 100) {
 			System.out.println("THE TOWER IS FIRING");
 		}
 	}
