@@ -28,6 +28,7 @@ public class Luigi extends Enemy
 		if (location >= 1)
 		{
 			state.removeAnimatable(this);
+			state.addAnimatable(new LuigiDying(state, new Point(state.getPath().locatePosition(location)) ));
 			location = 0;
 			state.lifeEditor(2);
 		}
