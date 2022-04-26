@@ -32,7 +32,7 @@ public class RedKoopaTroopa extends Tower
 		{
 			if(e.getLocation().distance(p) < 75)
 			{
-				System.out.println("Boom! I'm firing!");
+				
 				timeSinceLastShot = 0;
 			}
 		}

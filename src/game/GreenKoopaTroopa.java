@@ -34,6 +34,10 @@ public class GreenKoopaTroopa extends Tower
 		{
 			if (e.getLocation().distance(p) < 75)
 			{
+				int deltaX = e.getLocation().x - x;
+				int deltaY = e.getLocation().y - y;
+				
+				state.addAnimatable(new FXGreenShell(state, x, y, deltaX, deltaY));
 				timeSinceLastShot = 0;
 			}
 		}
