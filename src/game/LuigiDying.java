@@ -34,7 +34,7 @@ public class LuigiDying implements Animatable {
     @Override
     public void draw(Graphics g, GameView view) {
         Point point = new Point(state.getPath().locatePosition(location));
-		view.drawCenteredImage(g, "resources/mario.png", (int)point.getX(), (int)point.getY(), this.scale);
+		view.drawCenteredImage(g, "resources/luigi.png", (int)point.getX(), (int)point.getY(), this.scale);
     }
     
 }
