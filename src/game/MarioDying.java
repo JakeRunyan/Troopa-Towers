@@ -25,7 +25,10 @@ public class MarioDying implements Animatable {
         // this.location = 
 	}
 
-    @Override
+    /** Shrink mario in every frame. 
+     * 
+     * @param elapsedTime This varible is not used in this update method. 
+     */
     public void update(double elapsedTime) {
         // Decrease Mario's Size
         if (this.scale >= 0) 
@@ -35,7 +38,11 @@ public class MarioDying implements Animatable {
         
     }
 
-    @Override
+    /** Draw mario at the right place every time. 
+     * 
+     * @param g A graphics object to draw the Mario on the screen. 
+	 * @param view passes in a reference to the GameView class so that all of the images on the screen can draw in the right place. 
+     */
     public void draw(Graphics g, GameView view) {
 		view.drawCenteredImage(g, "resources/mario.png", (int)position.getX(), (int)position.getY(), this.scale);
     }
