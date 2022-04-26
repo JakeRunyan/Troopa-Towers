@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Point;
 
 public class FXGreenShell extends FX {
 	
@@ -27,6 +28,15 @@ public class FXGreenShell extends FX {
 		
 		x = x + deltaX * elapsedTime * 7;
 		y = y + deltaY * elapsedTime * 7;
+		
+		Point p = new Point((int) x, (int) y);
+		Enemy e = state.findNearestEnemy(p.x, p.y);
+		
+		if(e.getLocation().distance(p) < 30)
+		{
+			state.removeAnimatable(this);
+			state.removeAnimatable(e);
+		}
 	}
 	
 	public void draw(Graphics g, GameView view) {

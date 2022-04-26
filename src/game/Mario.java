@@ -27,10 +27,11 @@ public class Mario extends Enemy
 		if (pathPosition >= 1)
 		{
 			state.removeAnimatable(this);
-			state.addAnimatable(new MarioDying(state, new Point(state.getPath().locatePosition(pathPosition)) ));
+			state.addAnimatable(new MarioDying(state, new Point(state.getPath().locatePosition(pathPosition))));
 			pathPosition = 0;
 			state.lifeEditor(1);
 		}
+
 	}
 
 	/**
