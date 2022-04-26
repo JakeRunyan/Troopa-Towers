@@ -9,18 +9,19 @@ import java.awt.Point;
 
 public class LuigiDying implements Animatable {
 
-    private double location;
     private GameState state;
     private int scale;
+    private Point position;
 
     /**
 	 * Constructor for the Luigi object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the Luigi with the correct information. 
 	 */
-	public LuigiDying(GameState state) {
+	public LuigiDying(GameState state, Point location) {
 		this.state = state;
         this.scale = 35;
+        this.position = location;
         // this.location = 
 	}
 
@@ -29,12 +30,13 @@ public class LuigiDying implements Animatable {
         // Decrease Mario's Size
         if (this.scale >= 0)
             this.scale += -1;
+        else
+        	state.removeAnimatable(this);
     }
 
     @Override
     public void draw(Graphics g, GameView view) {
-        Point point = new Point(state.getPath().locatePosition(location));
-		view.drawCenteredImage(g, "resources/luigi.png", (int)point.getX(), (int)point.getY(), this.scale);
+    	view.drawCenteredImage(g, "resources/luigi.png", (int)position.getX(), (int)position.getY(), this.scale);
     }
     
 }
