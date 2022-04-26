@@ -17,7 +17,7 @@ public class Mario extends Enemy
 		super(state, 0.0);
 	}
 	
-	/** Update the Mario based to adavance its location. 
+	/** Update the Mario based to advance its location. 
 	 * 
 	 * @param elapsedTime - the amount of the time between frames. 
 	 */
@@ -34,8 +34,7 @@ public class Mario extends Enemy
 
 	}
 
-	/**
-	 * Puts mario on the screen every time the frame is updated. 
+	/** Puts Mario on the screen every time the frame is updated. 
 	 * 
 	 * @param g A graphics object to draw the Mario on the screen. 
 	 * @param view passes in a reference to the GameView class so that all of the images on the screen can draw in the right place. 

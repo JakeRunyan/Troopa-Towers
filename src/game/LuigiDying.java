@@ -13,8 +13,7 @@ public class LuigiDying implements Animatable {
     private int scale;
     private Point position;
 
-    /**
-	 * Constructor for the Luigi object. 
+    /** Constructor for the Luigi object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the Luigi with the correct information. 
 	 */
@@ -22,10 +21,13 @@ public class LuigiDying implements Animatable {
 		this.state = state;
         this.scale = 35;
         this.position = location;
-        // this.location = 
+        state.creditEditor(20);
 	}
 
-    @Override
+	/** Shrink Luigi in every frame. 
+     * 
+     * @param elapsedTime This varible is not used in this update method. 
+     */
     public void update(double elapsedTime) {
         // Decrease Mario's Size
         if (this.scale >= 0)
@@ -34,7 +36,11 @@ public class LuigiDying implements Animatable {
         	state.removeAnimatable(this);
     }
 
-    @Override
+    /** Draw Luigi at the right place every time. 
+     * 
+     * @param g A graphics object to draw the Mario on the screen. 
+	 * @param view passes in a reference to the GameView class so that all of the images on the screen can draw in the right place. 
+     */
     public void draw(Graphics g, GameView view) {
     	view.drawCenteredImage(g, "resources/luigi.png", (int)position.getX(), (int)position.getY(), this.scale);
     }

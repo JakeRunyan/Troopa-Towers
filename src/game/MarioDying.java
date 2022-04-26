@@ -13,8 +13,7 @@ public class MarioDying implements Animatable {
     private int scale;
     private Point position;
 
-    /**
-	 * Constructor for the Mario object. 
+    /** Constructor for the Mario object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the Mario with the correct information. 
 	 */
@@ -22,10 +21,10 @@ public class MarioDying implements Animatable {
 		this.state = state;
         this.scale = 35;
         this.position = location;
-        // this.location = 
+        state.creditEditor(10);
 	}
 
-    /** Shrink mario in every frame. 
+    /** Shrink Mario in every frame. 
      * 
      * @param elapsedTime This varible is not used in this update method. 
      */
@@ -35,10 +34,9 @@ public class MarioDying implements Animatable {
             this.scale += -1;
         else
             state.removeAnimatable(this);
-        
     }
 
-    /** Draw mario at the right place every time. 
+    /** Draw Mario at the right place every time. 
      * 
      * @param g A graphics object to draw the Mario on the screen. 
 	 * @param view passes in a reference to the GameView class so that all of the images on the screen can draw in the right place. 

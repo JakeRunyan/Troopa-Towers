@@ -8,8 +8,7 @@ import java.awt.Point;
 
 public class Luigi extends Enemy
 {
-	/**
-	 * Constructor for the Luigi object. 
+	/** Constructor for the Luigi object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the Luigi with the correct information. 
 	 */
@@ -18,6 +17,10 @@ public class Luigi extends Enemy
 		super(state, 0.0);
 	}
 	
+	/** Update the Luigi based to advance its location. 
+	 * 
+	 * @param elapsedTime - the amount of the time between frames. 
+	 */
 	public void update(double elapsedTime)
 	{
 		pathPosition += .003;
@@ -30,6 +33,11 @@ public class Luigi extends Enemy
 		}
 	}
 
+	/** Puts Luigi on the screen every time the frame is updated. 
+	 * 
+	 * @param g A graphics object to draw the Mario on the screen. 
+	 * @param view passes in a reference to the GameView class so that all of the images on the screen can draw in the right place. 
+	 */
 	public void draw(Graphics g, GameView view)
 	{
 		Point point = new Point(state.getPath().locatePosition(pathPosition));
