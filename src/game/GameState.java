@@ -191,7 +191,12 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects.clear();
 	}
 
-
+	/** Finds and returns the enemy object closest tot the tower calling this helper method. 
+	 * 
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public Enemy findNearestEnemy (int x, int y) {
 		// Set Up Variables for the Loop
 		Point p = new Point(x, y);
