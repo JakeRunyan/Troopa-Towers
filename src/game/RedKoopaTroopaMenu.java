@@ -19,7 +19,7 @@ public class RedKoopaTroopaMenu extends Tower
 	 */
 	public void update(double elapsedTime)
 	{
-		if(state.getMouseClicked() && state.getCredit() >= cost && state.gameStarted)
+		if(state.getMouseClicked() && state.getCredit() >= cost)
 		{
 			int deltaX = Math.abs(x - state.getMouseX());
 			int deltaY = Math.abs(y -state.getMouseY());
