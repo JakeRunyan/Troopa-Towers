@@ -36,6 +36,11 @@ public class FXGreenShell extends FX {
 		{
 			state.removeAnimatable(this);
 			state.removeAnimatable(e);
+
+			if (e instanceof Mario)
+				state.addAnimatable(new MarioDying(state, p));
+			else if (e instanceof Luigi)
+				state.addAnimatable(new LuigiDying(state, p));
 		}
 	}
 	
