@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Point;
 
 public class GreenKoopaTroopa extends Tower
 {
@@ -18,7 +19,13 @@ public class GreenKoopaTroopa extends Tower
 	 */
 	public void update(double elapsedTime)
 	{
-		Enemy e = state.findNearestEnemy(x, y);
+		Enemy e = state.findNearestEnemy(x, y);        // Find an enemy within range
+
+		Point p = new Point(x, y);
+
+		if (e.getLocation().distance(p) < 50) {
+			System.out.println("THE TOWER IS FIRING");
+		}
 	}
 
 	/** This draws the tower.
