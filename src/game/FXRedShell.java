@@ -39,9 +39,9 @@ public class FXRedShell extends FX {
 			state.removeAnimatable(e);
 
 			if (e instanceof Mario)
-				state.addAnimatable(new MarioDying(state, p));
+				state.addAnimatable(new MarioDying(state, new Point(e.getLocation().x, e.getLocation().y)));
 			else if (e instanceof Luigi)
-				state.addAnimatable(new LuigiDying(state, p));
+				state.addAnimatable(new LuigiDying(state, new Point(e.getLocation().x, e.getLocation().y)));
 		}
 	}
 	
