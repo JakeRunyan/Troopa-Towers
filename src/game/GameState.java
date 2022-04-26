@@ -193,8 +193,10 @@ public class GameState implements MouseMotionListener, MouseListener
 
 
 	public Enemy findNearestEnemy (int x, int y) {
+		// Set Up Variables for the Loop
 		Point p = new Point(x, y);
 		Enemy closest = null;
+		
 		for (Animatable a : objects) { 			// Look through the list of animateables
 			if (a instanceof Enemy) {  			// If there is an enemy 
 				Enemy e = (Enemy) a;
