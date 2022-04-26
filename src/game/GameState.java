@@ -48,8 +48,8 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects.add(new Background());
 		objects.add(new Menu(this));
 		objects.add(new StartButton(this, 700, 500));
-		objects.add(new GreenKoopaTroopaMenu(this, 635, 100, 50));
-		objects.add(new RedKoopaTroopaMenu(this, 635, 200, 100));
+		objects.add(new GreenKoopaTroopaMenu(this, control, 635, 100, 50));
+		objects.add(new RedKoopaTroopaMenu(this, control, 635, 200, 100));
 		
 		// Build our path
 		try

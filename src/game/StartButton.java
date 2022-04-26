@@ -49,6 +49,5 @@ public class StartButton implements Animatable
 
         // Draw the Image
         view.drawCenteredImage(g, "resources/lakitu.png", x, y, 50);
-        
     }
 }

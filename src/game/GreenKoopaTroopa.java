@@ -8,12 +8,12 @@ public class GreenKoopaTroopa extends Tower
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public GreenKoopaTroopa(GameState state, int x, int y, int cost)
+	public GreenKoopaTroopa(GameState state, GameControl control, int x, int y, int cost)
 	{
-		super(state, x, y, cost);
+		super(state, control, x, y, cost);
 		state.creditEditor(-cost);
 	}
-
+	
 	/** This will update the tower.
 	 */
 	public void update(double elapsedTime)
