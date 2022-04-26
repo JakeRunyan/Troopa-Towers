@@ -23,6 +23,7 @@ public class StartButton implements Animatable
 			if(deltaX < 40 && deltaY < 40)
 			{
 				state.consumeClick();
+				state.gameStarted = true;
 			}
 		}
     }
@@ -31,7 +32,7 @@ public class StartButton implements Animatable
     {      
         // Draw the text
         g.setColor(Color.WHITE);
-        g.drawString("Press Lakitu to start the game", 625, 450);
+        g.drawString("Press Lakitu to start the game", x-75, y-50);
 
         // Draw the Image
         view.drawCenteredImage(g, "resources/lakitu.png", x, y, 50);
