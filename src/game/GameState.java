@@ -5,6 +5,7 @@ package game;
 
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -190,6 +191,23 @@ public class GameState implements MouseMotionListener, MouseListener
 		objects.clear();
 	}
 
+
+	public Enemy findNearestEnemy (int x, int y) {
+		Point p = new Point(x, y);
+		Enemy closest = null;
+		for (Animatable a : objects) { 			// Look through the list of animateables
+			if (a instanceof Enemy) {  			// If there is an enemy 
+				Enemy e = (Enemy) a;
+				if (closest == null)			// Check if it is the closest. 
+					closest = e;
+				else if (p.distance(e.getLocation()) < p.distance(closest.getLocation()))
+					closest = e;
+			}
+
+		}
+		return closest;						    // Then return the enemy. 
+
+	}
 
 
 

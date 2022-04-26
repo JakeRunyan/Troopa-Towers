@@ -18,8 +18,10 @@ public class Mario extends Enemy
 	 */
 	public Mario(GameState state) 
 	{
+		super(state, 0.0);
+		
 		this.state = state;
-		location = 0;
+		
 	}
 	
 	/**

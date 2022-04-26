@@ -18,6 +18,7 @@ public class Luigi extends Enemy
 	 */
 	public Luigi(GameState state)
 	{
+		super(state, 0.0);
 		this.state = state;
 	}
 	

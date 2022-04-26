@@ -18,7 +18,7 @@ public class GreenKoopaTroopa extends Tower
 	 */
 	public void update(double elapsedTime)
 	{
-		
+		Enemy e = state.findNearestEnemy(x, y);
 	}
 
 	/** This draws the tower.
