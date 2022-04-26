@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Point;
 
 public class FXRedShell extends FX {
 	
@@ -15,8 +16,6 @@ public class FXRedShell extends FX {
 		
 		this.deltaX = deltaX;
 		this.deltaY = deltaY;
-		
-		System.out.println("Shooting red shells is fun!!!");
 		}
 
 	// Animateable Methods
@@ -27,6 +26,15 @@ public class FXRedShell extends FX {
 		
 		x = x + deltaX * elapsedTime * 7;
 		y = y + deltaY * elapsedTime * 7;
+		
+		Point p = new Point((int) x, (int) y);
+		Enemy e = state.findNearestEnemy(p.x, p.y);
+		
+		if(e.getLocation().distance(p) < 30)
+		{
+			state.removeAnimatable(this);
+			state.removeAnimatable(e);
+		}
 	}
 	
 	@Override
