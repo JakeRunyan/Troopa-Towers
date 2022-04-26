@@ -1,6 +1,6 @@
 /** This class handles creating the background of the game.
  * @author Jake Runyan, Nathan Atwood
- * @version April 12th, 2022 */
+ * @version April 26th, 2022 */
 package game;
 
 import java.awt.Graphics;

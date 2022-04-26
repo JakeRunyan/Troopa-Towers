@@ -1,3 +1,6 @@
+/** Superclass for the towers. 
+ * @author Jake Runyan, Nathan Atwood
+ * @version April 26th, 2022 */
 package game;
 
 abstract public class Tower implements Animatable

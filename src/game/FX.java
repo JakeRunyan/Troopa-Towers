@@ -1,4 +1,8 @@
-package game;
+/**Superclass for all the effects in the game. 
+ * @author Jake Runyan, Nathan Atwood
+ * @version April 26th, 2022 */
+
+ package game;
 
 abstract public class FX implements Animatable
 {

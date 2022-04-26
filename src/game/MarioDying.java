@@ -1,6 +1,6 @@
 /**Once mario is hit with a shell he needs to decrease in size until he is no longer visible. 
  * @author Jake Runyan, Nathan Atwood
- * @version April 25th, 2022 */
+ * @version April 26th, 2022 */
 
 package game;
 
@@ -29,6 +29,8 @@ public class MarioDying implements Animatable {
      * @param elapsedTime This varible is not used in this update method. 
      */
     public void update(double elapsedTime) {
+        // 
+        
         // Decrease Mario's Size
         if (this.scale >= 0) 
             this.scale += -1;

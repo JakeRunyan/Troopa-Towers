@@ -1,6 +1,6 @@
 /**Once mario is hit with a shell he needs to decrease in size until he is no longer visible. 
  * @author Jake Runyan, Nathan Atwood
- * @version April 25th, 2022 */
+ * @version April 26th, 2022 */
 
 package game;
 

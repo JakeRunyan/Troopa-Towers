@@ -1,6 +1,6 @@
 /** This class handles creating the window and generating the graphics within.
  * @author Jake Runyan, Nathan Atwood
- * @version April 19th, 2022 */
+ * @version April 26th, 2022 */
 package game;
 
 import java.awt.Dimension;
@@ -72,4 +72,6 @@ public class GameView extends JPanel
 	{
 			g.drawImage(control.loadImage(name), x-scale/2, y-scale/2, scale, scale, null);
 	}
+
+	
 }

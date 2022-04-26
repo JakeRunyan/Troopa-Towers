@@ -1,6 +1,6 @@
 /** This class holds the data for the Luigi.
  * @author Jake Runyan, Nathan Atwood
- * @version April 19th, 2022 */
+ * @version April 26th, 2022 */
 package game;
 
 import java.awt.Graphics;

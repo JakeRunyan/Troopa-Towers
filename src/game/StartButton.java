@@ -1,3 +1,6 @@
+/**All the code for the startbutton in the bottom left corner of the screen.   
+ * @author Jake Runyan, Nathan Atwood
+ * @version April 26th, 2022 */
 package game;
 
 import java.awt.Graphics;

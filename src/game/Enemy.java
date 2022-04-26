@@ -1,3 +1,6 @@
+/**Superclass for the enemies. 
+ * @author Jake Runyan, Nathan Atwood
+ * @version April 26th, 2022 */
 package game;
 
 import java.awt.Point;
