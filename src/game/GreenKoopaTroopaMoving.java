@@ -8,9 +8,9 @@ public class GreenKoopaTroopaMoving extends Tower
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
 	 */
-	public GreenKoopaTroopaMoving(GameState state, int x, int y, int cost)
+	public GreenKoopaTroopaMoving(GameState state, GameControl control, int x, int y, int cost)
 	{
-		super(state, x, y, cost);
+		super(state, control, x, y, cost);
 	}
 
 	/** This will update the tower to follow the mouse until it gets clicked.
@@ -25,7 +25,10 @@ public class GreenKoopaTroopaMoving extends Tower
 			if(x < 600 && y < 600)
 			{
 				state.consumeClick();
-				state.addAnimatable(new GreenKoopaTroopa(state, x, y, cost));
+				
+				if(control.loadImage("resources/path_mask.png").getRGB(x, y) == -16777216)
+					return;
+				state.addAnimatable(new GreenKoopaTroopa(state, control, x, y, cost));
 				state.removeAnimatable(this);
 			}
 		}
