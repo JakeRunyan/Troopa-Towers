@@ -9,32 +9,35 @@ import java.awt.Point;
 
 public class MarioDying implements Animatable {
 
-    private double location;
     private GameState state;
     private int scale;
+    private Point position;
 
     /**
 	 * Constructor for the Mario object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the Mario with the correct information. 
 	 */
-	public MarioDying(GameState state) {
+	public MarioDying(GameState state, Point location) {
 		this.state = state;
         this.scale = 35;
+        this.position = location;
         // this.location = 
 	}
 
     @Override
     public void update(double elapsedTime) {
         // Decrease Mario's Size
-        if (this.scale >= 0)
+        if (this.scale >= 0) 
             this.scale += -1;
+        else
+            state.removeAnimatable(this);
+        
     }
 
     @Override
     public void draw(Graphics g, GameView view) {
-        Point point = new Point(state.getPath().locatePosition(location));
-		view.drawCenteredImage(g, "resources/mario.png", (int)point.getX(), (int)point.getY(), this.scale);
+		view.drawCenteredImage(g, "resources/mario.png", (int)position.getX(), (int)position.getY(), this.scale);
     }
     
 }
