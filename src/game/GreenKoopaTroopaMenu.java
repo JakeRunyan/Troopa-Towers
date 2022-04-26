@@ -18,7 +18,7 @@ public class GreenKoopaTroopaMenu extends Tower
 	 */
 	public void update(double elapsedTime)
 	{
-		if(state.getMouseClicked() && state.getCredit() >= cost)
+		if(state.getMouseClicked() && state.getCredit() >= cost && state.gameStarted)
 		{
 			int deltaX = Math.abs(x - state.getMouseX());
 			int deltaY = Math.abs(y -state.getMouseY());

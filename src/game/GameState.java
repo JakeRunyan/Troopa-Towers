@@ -24,7 +24,7 @@ public class GameState implements MouseMotionListener, MouseListener
 	private int timer;
 	private int life;
 	private int credit;
-	private boolean gameStarted;
+	public boolean gameStarted;
 	
 	private int mouseX, mouseY;
 	private boolean mouseClicked;
@@ -47,12 +47,9 @@ public class GameState implements MouseMotionListener, MouseListener
 		
 		objects.add(new Background());
 		objects.add(new Menu(this));
-		objects.add(new StartButton());
-		if (gameStarted)
-		{
-			objects.add(new GreenKoopaTroopaMenu(this, 635, 100, 50));
-			objects.add(new RedKoopaTroopaMenu(this, 635, 200, 100));
-		}
+		objects.add(new StartButton(this, 700, 500));
+		objects.add(new GreenKoopaTroopaMenu(this, 635, 100, 50));
+		objects.add(new RedKoopaTroopaMenu(this, 635, 200, 100));
 		
 		// Build our path
 		try
@@ -192,10 +189,6 @@ public class GameState implements MouseMotionListener, MouseListener
 	{
 		objects.clear();
 	}
-
-
-
-
 
 
 
