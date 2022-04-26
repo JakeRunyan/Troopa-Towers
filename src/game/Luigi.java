@@ -8,9 +8,6 @@ import java.awt.Point;
 
 public class Luigi extends Enemy
 {
-	private double location;
-	private GameState state;
-	
 	/**
 	 * Constructor for the Luigi object. 
 	 * 
@@ -19,24 +16,23 @@ public class Luigi extends Enemy
 	public Luigi(GameState state)
 	{
 		super(state, 0.0);
-		this.state = state;
 	}
 	
 	public void update(double elapsedTime)
 	{
-		location += .003;
-		if (location >= 1)
+		pathPosition += .003;
+		if (pathPosition >= 1)
 		{
 			state.removeAnimatable(this);
-			state.addAnimatable(new LuigiDying(state, new Point(state.getPath().locatePosition(location)) ));
-			location = 0;
+			state.addAnimatable(new LuigiDying(state, new Point(state.getPath().locatePosition(pathPosition)) ));
+			pathPosition = 0;
 			state.lifeEditor(2);
 		}
 	}
 
 	public void draw(Graphics g, GameView view)
 	{
-		Point point = new Point(state.getPath().locatePosition(location));
+		Point point = new Point(state.getPath().locatePosition(pathPosition));
 		view.drawCenteredImage(g, "resources/luigi.png", (int)point.getX(), (int)point.getY(), 35);
 	}
 

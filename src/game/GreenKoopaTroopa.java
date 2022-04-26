@@ -5,7 +5,6 @@ import java.awt.Point;
 
 public class GreenKoopaTroopa extends Tower
 {
-
 	private double timeSinceLastShot;
 
 	/** Constructor for the KoopaTroopa object. 
@@ -33,10 +32,10 @@ public class GreenKoopaTroopa extends Tower
 
 		if(e != null)
 		{
-		if (e.getLocation().distance(p) < 200) {
-			System.out.println("THE TOWER IS FIRING AT:  " + p.getX()  + "    " + p.getY());
-			timeSinceLastShot = 0;
-		}
+			if (e.getLocation().distance(p) < 75)
+			{
+				timeSinceLastShot = 0;
+			}
 		}
 	}
 

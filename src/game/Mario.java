@@ -8,36 +8,27 @@ import java.awt.Point;
 
 public class Mario extends Enemy
 {
-	private double location;
-	private GameState state;
-	
-	/**
-	 * Constructor for the Mario object. 
+	/** Constructor for the Mario object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the Mario with the correct information. 
 	 */
 	public Mario(GameState state) 
 	{
 		super(state, 0.0);
-		
-		this.state = state;
-		
 	}
 	
-	/**
-	 * 
-	 * Update the Mario based to adavance its location. 
+	/** Update the Mario based to adavance its location. 
 	 * 
 	 * @param elapsedTime - the amount of the time between frames. 
 	 */
 	public void update(double elapsedTime)
 	{
-		location += .002;
-		if (location >= 1)
+		pathPosition += .002;
+		if (pathPosition >= 1)
 		{
 			state.removeAnimatable(this);
-			state.addAnimatable(new MarioDying(state, new Point(state.getPath().locatePosition(location)) ));
-			location = 0;
+			state.addAnimatable(new MarioDying(state, new Point(state.getPath().locatePosition(pathPosition)) ));
+			pathPosition = 0;
 			state.lifeEditor(1);
 		}
 	}
@@ -50,7 +41,7 @@ public class Mario extends Enemy
 	 */
 	public void draw(Graphics g, GameView view)
 	{
-		Point point = new Point(state.getPath().locatePosition(location));
+		Point point = new Point(state.getPath().locatePosition(pathPosition));
 		view.drawCenteredImage(g, "resources/mario.png", (int)point.getX(), (int)point.getY(), 35);
 	}
 }

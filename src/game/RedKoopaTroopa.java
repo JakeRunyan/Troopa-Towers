@@ -5,6 +5,7 @@ import java.awt.Point;
 
 public class RedKoopaTroopa extends Tower
 {
+	private double timeSinceLastShot;
 	/** Constructor for the KoopaTroopa object. 
 	 * 
 	 * @param state Passes in the GameState object so to draw the KoopaTroopa with the correct information. 
@@ -13,23 +14,27 @@ public class RedKoopaTroopa extends Tower
 	{
 		super(state, control, x, y, cost);
 		state.creditEditor(-cost);
-		
-		System.out.println("Hi! I am created! " + x + "   " + y);
 	}
 
 	/** This will update the tower.
 	 */
 	public void update(double elapsedTime)
 	{
+		// One second since last shot?
+		timeSinceLastShot += elapsedTime;
+		if (timeSinceLastShot < 1.0)
+			return; // Do not shoot anything
+		
 		Enemy e = state.findNearestEnemy(x, y);
 		Point p = new Point(x, y);
 		
 		if(e != null)
 		{
-		if(e.getLocation().distance(p) < 75)
-		{
-			System.out.println("Boom! I'm firing!");
-		}
+			if(e.getLocation().distance(p) < 75)
+			{
+				System.out.println("Boom! I'm firing!");
+				timeSinceLastShot = 0;
+			}
 		}
 	}
 
