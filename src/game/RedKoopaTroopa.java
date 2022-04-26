@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Point;
 
 public class RedKoopaTroopa extends Tower
 {
@@ -12,13 +13,24 @@ public class RedKoopaTroopa extends Tower
 	{
 		super(state, control, x, y, cost);
 		state.creditEditor(-cost);
+		
+		System.out.println("Hi! I am created! " + x + "   " + y);
 	}
 
 	/** This will update the tower.
 	 */
 	public void update(double elapsedTime)
 	{
+		Enemy e = state.findNearestEnemy(x, y);
+		Point p = new Point(x, y);
 		
+		if(e != null)
+		{
+		if(e.getLocation().distance(p) < 75)
+		{
+			System.out.println("Boom! I'm firing!");
+		}
+		}
 	}
 
 	/** This draws the tower.
